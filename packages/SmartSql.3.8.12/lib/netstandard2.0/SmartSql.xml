@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSql</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSql.Abstractions.Command.ICommandExecuter">
+            <summary>
+            SQL 命令执行器
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.Config.IConfigLoader">
+            <summary>
+            配置文件加载器
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.Config.IConfigLoader.Load">
+            <summary>
+            加载配置文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataReaderDeserializer.IDataReaderDeserializer">
+            <summary>
+            DataReader 反序列化器
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataSource.IDataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.DataSource.IDataSource.Name">
+            <summary>
+            数据源名称
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.DataSource.IDataSource.ConnectionString">
+            <summary>
+            数据源链接字符串
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataSource.IDataSourceFilter">
+            <summary>
+            数据源筛选器
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataSource.IDataSourceManager">
+            <summary>
+            数据源管理器
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.DataSource.IDataSourceManager.GetDataSource(SmartSql.Abstractions.DataSourceChoice)">
+            <summary>
+            获取数据源
+            </summary>
+            <param name="sourceChoice"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataSource.IReadDataSource">
+            <summary>
+            数据源-读库
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.DataSource.IReadDataSource.Weight">
+            <summary>
+            权重
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DataSource.IWriteDataSource">
+            <summary>
+            数据源- 写库
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DbSession.IDbConnectionSession">
+            <summary>
+            数据库连接会话
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DbSession.DbSessionLifeCycle">
+            <summary>
+            Db会话生命周期
+            </summary>
+        </member>
+        <member name="F:SmartSql.Abstractions.DbSession.DbSessionLifeCycle.Transient">
+            <summary>
+            瞬态
+            </summary>
+        </member>
+        <member name="F:SmartSql.Abstractions.DbSession.DbSessionLifeCycle.Scoped">
+            <summary>
+            执行作用域
+            [ Transaction | ... ]
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.DbSession.IDbConnectionSessionStore">
+            <summary>
+            数据库链接会话存储
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISession.BeginSession">
+            <summary>
+            开启会话
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISession.BeginSession(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            开启会话
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISession.EndSession">
+            <summary>
+            结束会话
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.ISmartSqlMapper">
+            <summary>
+            SmartSql 映射器
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISmartSqlMapper.Execute(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            IDbCommand.ExecuteNonQuery
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISmartSqlMapper.ExecuteScalar``1(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            IDbCommand.ExecuteScalar
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISmartSqlMapper.Query``1(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            查询返回List
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISmartSqlMapper.QuerySingle``1(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            查询返回单个实体
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ISmartSqlMapper.GetNested``1(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            获取多结果集嵌套对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSql.Abstractions.ISqlBuilder">
+            <summary>
+            Sql 生成器
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.BeginTransaction">
+            <summary>
+            开启事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.BeginTransaction(SmartSql.Abstractions.RequestContext)">
+            <summary>
+            开启事务
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            开启事务
+            </summary>
+            <param name="isolationLevel">事务级别</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.BeginTransaction(SmartSql.Abstractions.RequestContext,System.Data.IsolationLevel)">
+            <summary>
+            开启事务
+            </summary>
+            <param name="context"></param>
+            <param name="isolationLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.CommitTransaction">
+            <summary>
+            提交事务
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.ITransaction.RollbackTransaction">
+            <summary>
+            回滚事务
+            </summary>
+        </member>
+        <member name="T:SmartSql.Abstractions.RequestContext">
+            <summary>
+            Sql 请求上下文
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.RequestContext.Scope">
+            <summary>
+            SmartSqlMap.Scope
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.RequestContext.SqlId">
+            <summary>
+            Statement.Id
+            </summary>
+        </member>
+        <member name="P:SmartSql.Abstractions.RequestContext.FullSqlId">
+            <summary>
+            Statement.FullSqlId
+            </summary>
+        </member>
+        <member name="M:SmartSql.Abstractions.RequestContext.GetPropertyName(System.String)">
+            <summary>
+            根据参数名获取对应实体属性名
+            </summary>
+            <param name="paramName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSql.Cache.FifoCacheProvider">
+            <summary>
+            First In First Out
+            </summary>
+        </member>
+        <member name="T:SmartSql.Cache.LruCacheProvider">
+            <summary>
+            Least Recently Used
+            </summary>
+        </member>
+        <member name="F:SmartSql.DataSourceFilter._weightFilter">
+            <summary>
+            权重筛选器
+            </summary>
+        </member>
+        <member name="P:SmartSql.DbParameterCollection.ParameterNames">
+            <summary>
+            Request参数属性名
+            </summary>
+        </member>
+        <member name="T:SmartSql.DbSession.DbConnectionSessionStore">
+            <summary>
+            DbConnection Session Store 
+            </summary>
+        </member>
+        <member name="T:SmartSql.LocalFileConfigLoader">
+            <summary>
+            本地文件配置加载器
+            </summary>
+        </member>
+        <member name="M:SmartSql.LocalFileConfigLoader.WatchConfig">
+            <summary>
+            监控配置文件-热更新
+            </summary>
+        </member>
+        <member name="M:SmartSql.Logging.NoneLogger.BeginScope``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:SmartSql.Logging.NoneLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:SmartSql.Logging.NoneLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="P:SmartSql.MapperContainer.Container">
+            <summary>
+            Mapper容器
+            </summary>
+        </member>
+        <member name="T:SmartSql.Utils.FileWatcherLoader">
+            <summary>
+            文件监控加载器
+            </summary>
+        </member>
+        <member name="T:SmartSql.Utils.WeightFilter`1">
+            <summary>
+            权重筛选器
+            </summary>
+        </member>
+        <member name="M:SmartSql.Utils.WeightFilter`1.Elect(System.Collections.Generic.IEnumerable{SmartSql.Utils.WeightFilter{`0}.WeightSource})">
+            <summary>
+            选举权重源
+            </summary>
+            <param name="inWeightSources"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSql.Utils.WeightFilter`1.WeightSource">
+            <summary>
+            权重源
+            </summary>
+        </member>
+    </members>
+</doc>
